@@ -1,0 +1,23 @@
+{
+  "name": "embed-bqplot",
+  "version": "1.0.0",
+  "description": "bqplot gallery",
+  "main": "index.js",
+  "scripts": {
+    "prepublish": "browserify -g node-lessify index.js --outfile index.built.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sylvain Corlay",
+  "license": "ISC",
+  "dependencies": {
+    "less": "^2.5.3",
+    "browserify": "^11.2.0",
+    "ipywidgets": "file:../../ipython/ipywidgets",
+    "bqplot": "file:../bqplot",
+    "node-lessify": "^0.1.1"
+  },
+  "engines": {
+    "node": "0.12.7",
+    "npm": "2.11.3"
+  }
+}
