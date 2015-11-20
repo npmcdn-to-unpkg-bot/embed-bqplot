@@ -38,13 +38,15 @@ WidgetManager.prototype.loadClass = function(class_name, module_name, registry) 
         if (registry && registry[class_name]) {
             resolve(registry[class_name]);
         } else if (module_name) {
-            require([module_name], function(module) {
-                if (module[class_name] === undefined) {
-                    reject(new Error('Class ' + class_name + ' not found in module ' + module_name));
-                } else {
-                    resolve(module[class_name]);
-                }
-            }, reject);
+                resolve(bqplot[class_name]);
+
+            //require([module_name], function(module) {
+            //    if (module[class_name] === undefined) {
+            //        reject(new Error('Class ' + class_name + ' not found in module ' + module_name));
+            //    } else {
+            //        resolve(module[class_name]);
+            //    }
+            //}, reject);
         } else {
             reject(new Error('Class '+ class_name + ' not found in registry '));
         }

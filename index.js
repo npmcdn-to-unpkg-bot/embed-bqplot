@@ -12,9 +12,5 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     var state = require("./spx_correlation.json");
 
-    manager.set_state(state).then(function() {
-        for (var i=0; i<top_level_ids.length; ++i) {
-            var view = manager.create_view(manager.get_model(top_level_ids[i]));
-        }     
-    });
+    manager.set_state(state);
 });
