@@ -1,35 +1,30 @@
-require('./node_modules/ipywidgets/ipywidgets/static/components/bootstrap/css/bootstrap.css')
-require('./node_modules/ipywidgets/node_modules/jquery-ui/themes/smoothness/jquery-ui.min.css')
+require('./node_modules/jupyter-js-widgets/static/components/bootstrap/css/bootstrap.css')
+require('./node_modules/jquery-ui/themes/smoothness/jquery-ui.min.css')
 
-var ipywidgets = require('ipywidgets');
+var jpywidgets = require('jupyter-js-widgets');
 var bqplot = require('bqplot');
-console.info('ipywidgets loaded successfully');
+console.info('jupyter-js-widgets loaded successfully');
 
 var WidgetManager = exports.WidgetManager = function(el) {
     //  Call the base class.
-    ipywidgets.ManagerBase.call(this);
+    jpywidgets.ManagerBase.call(this);
     this.el = el;
 };
-WidgetManager.prototype = Object.create(ipywidgets.ManagerBase.prototype);
+WidgetManager.prototype = Object.create(jpywidgets.ManagerBase.prototype);
 
 WidgetManager.prototype.display_view = function(msg, view, options) {
     var that = this;
     return Promise.resolve(view).then(function(view) {
         that.el.appendChild(view.el);
-        view.on('remove', function() {
-            console.log('view removed', view);
+        view.on("remove", function() {
+            console.log("View removed", view);
         });
         return view;
     });
 };
 
 WidgetManager.prototype._create_comm = function(comm_target_name, model_id, metadata) {
-    function nullFunction() {}
-    return Promise.resolve({
-        on_close: nullFunction,
-        on_msg: nullFunction,
-        send: nullFunction
-    });
+    return Promise.reject("No backend.");
 };
 
 WidgetManager.prototype._get_comm_info = function() {
@@ -41,7 +36,7 @@ WidgetManager.prototype.loadClass = function(class_name, module_name, registry) 
         if (registry && registry[class_name]) {
             resolve(registry[class_name]);
         } else if (module_name) {
-                resolve(bqplot[class_name]);
+            resolve(bqplot[class_name]);
 
             //require([module_name], function(module) {
             //    if (module[class_name] === undefined) {

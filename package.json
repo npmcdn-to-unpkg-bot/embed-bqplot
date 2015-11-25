@@ -1,5 +1,5 @@
 {
-  "name": "embed-bqplot",
+  "name": "jupyter-js-widgets-test",
   "version": "1.0.0",
   "description": "bqplot gallery",
   "main": "index.js",
@@ -10,14 +10,16 @@
   "author": "Sylvain Corlay",
   "license": "ISC",
   "dependencies": {
-    "less": "^2.5.3",
     "browserify": "^11.2.0",
-    "ipywidgets": "file:../../ipython/ipywidgets",
+    "node-lessify": "^0.1.1",
+    "font-awesome": "^4.5.0",
+    "jupyter-js-widgets": "file:../../ipython/ipywidgets/ipywidgets",
+    "jquery": "^2.1.4",
+    "jquery-ui": "^1.10.5",
     "bqplot": "file:../bqplot",
-    "node-lessify": "^0.1.1"
+    "codemirror": "^5.9.0"
   },
-  "engines": {
-    "node": "0.12.7",
-    "npm": "2.11.3"
+  "devDependencies": {
+    "bower": "^1.7.0"
   }
 }
