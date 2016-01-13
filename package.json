@@ -4,22 +4,28 @@
   "description": "bqplot gallery",
   "main": "index.js",
   "scripts": {
-    "prepublish": "browserify -g node-lessify index.js --outfile index.built.js",
+    "prepublish": "webpack index.js index.built.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Sylvain Corlay",
   "license": "ISC",
   "dependencies": {
-    "browserify": "^11.2.0",
-    "node-lessify": "^0.1.1",
+    "bqplot": "file:../bqplot",
+    "codemirror": "^5.9.0",
     "font-awesome": "^4.5.0",
     "jupyter-js-widgets": "file:../../ipython/ipywidgets/ipywidgets",
     "jquery": "^2.1.4",
-    "jquery-ui": "^1.10.5",
-    "bqplot": "file:../bqplot",
-    "codemirror": "^5.9.0"
+    "jquery-ui": "^1.10.5"
   },
   "devDependencies": {
-    "bower": "^1.7.0"
+    "bower": "^1.7.0",
+    "css-loader": "^0.23.1",
+    "file-loader": "^0.8.5",
+    "imports-loader": "^0.6.5",
+    "json-loader": "^0.5.4",
+    "less-loader": "^2.2.2",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.12.11"
   }
 }
