@@ -1,3 +1,4 @@
+var Promise = require("es6-promise").Promise;
 var CodeMirror = require("codemirror");
 require("codemirror/lib/codemirror.css");
 require("jupyter-js-widgets/css/widgets.min.css")
