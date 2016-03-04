@@ -1,5 +1,5 @@
-require('./node_modules/jupyter-js-widgets/static/components/bootstrap/css/bootstrap.css')
-require('./node_modules/jquery-ui/themes/smoothness/jquery-ui.min.css')
+require('bootstrap/dist/css/bootstrap.css')
+require('jquery-ui/themes/smoothness/jquery-ui.min.css')
 
 var jpywidgets = require('jupyter-js-widgets');
 var bqplot = require('bqplot');
@@ -21,10 +21,6 @@ WidgetManager.prototype.display_view = function(msg, view, options) {
         });
         return view;
     });
-};
-
-WidgetManager.prototype._create_comm = function(comm_target_name, model_id, metadata) {
-    return Promise.reject("No backend.");
 };
 
 WidgetManager.prototype._get_comm_info = function() {
