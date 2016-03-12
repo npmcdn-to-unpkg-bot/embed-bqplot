@@ -1,6 +1,7 @@
 var CodeMirror = require("codemirror");
-require("./node_modules/codemirror/lib/codemirror.css");
-require("./node_modules/codemirror/mode/python/python");
+require("codemirror/lib/codemirror.css");
+require("jupyter-js-widgets/css/widgets.min.css")
+require("codemirror/mode/python/python");
 
 var WidgetManager = require("./manager").WidgetManager;
 
