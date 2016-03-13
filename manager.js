@@ -29,7 +29,7 @@ WidgetManager.prototype._get_comm_info = function() {
 
 var bqplot = require('bqplot');
 
-window['define']('bqplot', function(){
+window.define('bqplot', function(){
     return bqplot;
 });
 
