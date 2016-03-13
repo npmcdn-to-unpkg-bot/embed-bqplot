@@ -2,7 +2,6 @@ require('bootstrap/dist/css/bootstrap.css')
 require('jquery-ui/themes/smoothness/jquery-ui.min.css')
 
 var widgets = require('jupyter-js-widgets');
-var bqplot = require('bqplot');
 console.info('jupyter-js-widgets loaded successfully');
 
 var WidgetManager = exports.WidgetManager = function(el) {
@@ -26,3 +25,11 @@ WidgetManager.prototype.display_view = function(msg, view, options) {
 WidgetManager.prototype._get_comm_info = function() {
     return Promise.resolve({});
 };
+
+
+var bqplot = require('bqplot');
+
+window['define']('bqplot', function(){
+    return bqplot;
+});
+
