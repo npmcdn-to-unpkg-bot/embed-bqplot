@@ -1,6 +1,6 @@
 var CodeMirror = require("codemirror");
 require("codemirror/lib/codemirror.css");
-require("jupyter-js-widgets/css/widgets.min.css")
+require("jupyter-js-widgets/css/widgets.min.css");
 require("codemirror/mode/python/python");
 
 var WidgetManager = require("./manager").WidgetManager;
@@ -17,9 +17,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
         viewportMargin: Infinity,
         readOnly: true
     });
+});
 
-    var state = require("./widget_state.json");
-    var widgetarea = document.getElementsByClassName("widgetarea")[0];
+
+window.w = function renderWidgetState (state) {
+    console.info('Inserting widget(s)...');
+    var widgetarea = document.createElement('div');
+    widgetarea.className = 'widgetarea'
     var manager = new WidgetManager(widgetarea);
     manager.set_state(state);
-});
+    var context = Array.prototype.slice.call(document.querySelectorAll('script'), -1)[0];
+    context.parentElement.insertBefore(widgetarea, context);
+};
