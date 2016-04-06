@@ -16,8 +16,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
 });
 
-require('jupyter-js-widgets/src/embed-webpack');
-
 var bqplot = require('bqplot');
 
 window.define('bqplot', function(){
