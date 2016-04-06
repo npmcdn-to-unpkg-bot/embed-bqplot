@@ -1,9 +1,6 @@
 var CodeMirror = require("codemirror");
 require("codemirror/lib/codemirror.css");
-require("jupyter-js-widgets/css/widgets.min.css");
 require("codemirror/mode/python/python");
-
-var WidgetManager = require("./manager").WidgetManager;
 
 document.addEventListener("DOMContentLoaded", function(event) {
 
@@ -19,13 +16,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
 });
 
+require('jupyter-js-widgets/src/embed-webpack');
 
-window.w = function renderWidgetState (state) {
-    console.info('Inserting widget(s)...');
-    var widgetarea = document.createElement('div');
-    widgetarea.className = 'widgetarea'
-    var manager = new WidgetManager(widgetarea);
-    manager.set_state(state);
-    var context = Array.prototype.slice.call(document.querySelectorAll('script'), -1)[0];
-    context.parentElement.insertBefore(widgetarea, context);
-};
+var bqplot = require('bqplot');
+
+window.define('bqplot', function(){
+    return bqplot;
+});
