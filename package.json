@@ -11,7 +11,7 @@
   "license": "Apache",
   "dependencies": {
     "bootstrap": "^3.3.6",
-    "bqplot": "file:../bqplot",
+    "bqplot": "file:../bqplot/js",
     "codemirror": "^5.9.0",
     "font-awesome": "^4.5.0",
     "jquery": "^2.1.4",
