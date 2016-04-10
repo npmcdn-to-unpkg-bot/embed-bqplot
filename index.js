@@ -15,9 +15,3 @@ document.addEventListener("DOMContentLoaded", function(event) {
         readOnly: true
     });
 });
-
-var bqplot = require('bqplot');
-
-window.define('bqplot', function(){
-    return bqplot;
-});
