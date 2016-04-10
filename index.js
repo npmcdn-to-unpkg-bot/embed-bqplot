@@ -1,9 +1,6 @@
 var CodeMirror = require("codemirror");
 require("codemirror/lib/codemirror.css");
-require("jupyter-js-widgets/css/widgets.min.css")
 require("codemirror/mode/python/python");
-
-var WidgetManager = require("./manager").WidgetManager;
 
 document.addEventListener("DOMContentLoaded", function(event) {
 
@@ -17,9 +14,4 @@ document.addEventListener("DOMContentLoaded", function(event) {
         viewportMargin: Infinity,
         readOnly: true
     });
-
-    var state = require("./widget_state.json");
-    var widgetarea = document.getElementsByClassName("widgetarea")[0];
-    var manager = new WidgetManager(widgetarea);
-    manager.set_state(state);
 });
